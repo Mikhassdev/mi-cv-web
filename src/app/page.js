@@ -6,13 +6,15 @@ export default function Home() {
       <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Contenedor Principal: Ocupa el ancho máximo de la pantalla */}
+      {/* Contenedor Principal: Ocupa todo el ancho de la pantalla y se divide en 2 Columnas */}
       <section className="max-w-[100vw] w-full z-10 grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-x-12 items-stretch text-left md:mt-12">
         
-        {/* COLUMNA IZQUIERDA: Tarjeta de Identidad */}
-        <div className="h-full flex flex-col justify-between bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl">
+        {/* COLUMNA IZQUIERDA: Agrupa Tarjeta de Identidad y Tarjeta de Estudios */}
+        <div className="flex flex-col space-y-6 md:sticky md:top-24 w-full">
           
-          <div className="space-y-6">
+          {/* TARJETA 1: Identidad y Tecnologías (Independiente) */}
+          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl flex flex-col space-y-6">
+            
             {/* Badge de disponibilidad */}
             <span className="self-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -34,46 +36,128 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* Tags de Tecnologías Clave al fondo de la tarjeta */}
-          <div className="pt-8 space-y-2">
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
-              Tecnologías que estoy aprendiendo
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-xs font-mono text-slate-300 shadow-sm">Docker & WSL2</span>
-              <span className="px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-xs font-mono text-slate-300 shadow-sm">Pentaho / ETL</span>
-              <span className="px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-xs font-mono text-slate-300 shadow-sm">Python & Django</span>
-              <span className="px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-xs font-mono text-slate-300 shadow-sm">MySQL / Kimball</span>
+            {/* Tags de Tecnologías Clave */}
+            <div className="pt-4 space-y-2">
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
+                Tecnologías que estoy aprendiendo
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-xs font-mono text-slate-300 shadow-sm">Docker & WSL2</span>
+                <span className="px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-xs font-mono text-slate-300 shadow-sm">Pentaho / ETL</span>
+                <span className="px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-xs font-mono text-slate-300 shadow-sm">Python & Django</span>
+                <span className="px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-xs font-mono text-slate-300 shadow-sm">MySQL / Kimball</span>
+              </div>
             </div>
-          </div>
-        </div>
 
-        {/* COLUMNA DERECHA: Tarjeta Acerca de Mí (Mismo tamaño exacto) */}
-        <div className="h-full flex flex-col justify-between bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl text-slate-300 leading-relaxed">
+          </div> {/* Cierre Tarjeta 1 */}
+
+          {/* TARJETA 2: Formación Académica (Independiente) */}
+          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl">
+            <h3 className="text-xl font-bold text-slate-100 tracking-tight mb-4">
+              Formación académica
+            </h3>
+            <div className="space-y-4 relative border-l border-slate-800 pl-4 ml-1">
+              <div>
+                <h4 className="text-sm font-semibold text-slate-200">Ingeniería en Informática</h4>
+                <p className="text-xs text-cyan-400 font-medium">INACAP • 2026 — En curso</p>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-slate-200">Analista Programador</h4>
+                <p className="text-xs text-slate-400 font-medium">INACAP • 2024 — 2025 • Cursando práctica</p>
+              </div>
+            </div>
+          </div> {/* Cierre Tarjeta 2 */}
+
+        </div> {/* Cierre Contenedor Columna Izquierda */}
+
+
+        {/* COLUMNA DERECHA: Agrupa Tarjeta Acerca de Mí y Tarjeta de Habilidades */}
+        <div className="flex flex-col space-y-6 w-full">
           
-          <div className="space-y-6">
+          {/* TARJETA 3: Acerca de Mí (Independiente) */}
+          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl text-slate-300 leading-relaxed">
             <h3 className="text-2xl font-bold text-slate-100 tracking-tight border-b border-slate-800 pb-3">
               Acerca de mí
             </h3>
 
-            <p className="text-base sm:text-lg text-slate-300">
+            <p className="mt-4 text-base sm:text-lg text-slate-300">
               Soy un programador en constante proceso de capacitación y certificación, apasionado por resolver problemas complejos mediante tecnología eficiente. Actualmente me mantengo enfocado en el estudio profundo de la automatización de datos y el desarrollo backend moderno.
             </p>
-          </div>
 
-          {/* Botón de acción empujado hacia el fondo de la tarjeta */}
-          <div className="pt-8">
-            <a 
-              href="#contacto" 
-              className="inline-block px-6 py-3 rounded-xl font-medium bg-gradient-to-r from-teal-500 to-cyan-500 text-slate-950 hover:opacity-90 transition shadow-lg shadow-teal-500/10 text-sm tracking-wide"
-            >
-              Contactar
-            </a>
-          </div>
+            {/* Botón de acción rápido */}
+            <div className="pt-6">
+              <a 
+                href="#contacto" 
+                className="inline-block px-6 py-3 rounded-xl font-medium bg-gradient-to-r from-teal-500 to-cyan-500 text-slate-950 hover:opacity-90 transition shadow-lg shadow-teal-500/10 text-sm tracking-wide"
+              >
+                Contactar
+              </a>
+            </div>
+          </div> {/* Cierre Tarjeta 3 */}
 
-        </div>
+          {/* TARJETA 4: Mis Habilidades (Independiente y Alineada) */}
+          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl text-slate-300 h-full flex flex-col justify-between">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-100 tracking-tight border-b border-slate-800 pb-3 mb-6">
+                Mis habilidades
+              </h3>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm">
+                
+                {/* Sub-columna Técnicas */}
+                <div className="space-y-3">
+                  <h4 className="text-xs font-semibold text-teal-400 uppercase tracking-wider mb-2">Técnicas</h4>
+                  
+                  <div className="space-y-2.5">
+                    <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
+                      <span className="text-slate-300">HTML, CSS, JS</span>
+                      <span className="font-mono text-teal-400 tracking-wider">★★★☆☆</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
+                      <span className="text-slate-300">Uso y manejo de IA</span>
+                      <span className="font-mono text-teal-400 tracking-wider">★★★★☆</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
+                      <span className="text-slate-300">Docker & WSL2</span>
+                      <span className="font-mono text-teal-400 tracking-wider">★★★☆☆</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
+                      <span className="text-slate-300">Git & GitHub</span>
+                      <span className="font-mono text-teal-400 tracking-wider">★★★★☆</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Sub-columna Gestión */}
+                <div className="space-y-3">
+                  <h4 className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">Gestión</h4>
+                  
+                  <div className="space-y-2.5">
+                    <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
+                      <span className="text-slate-300">Autoaprendizaje</span>
+                      <span className="font-mono text-blue-400 tracking-wider">★★★★★</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
+                      <span className="text-slate-300">Resolución de problemas</span>
+                      <span className="font-mono text-blue-400 tracking-wider">★★★★★</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
+                      <span className="text-slate-300">Adaptabilidad</span>
+                      <span className="font-mono text-blue-400 tracking-wider">★★★★★</span>
+                    </div>
+                    <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
+                      <span className="text-slate-300">Trabajo en equipo</span>
+                      <span className="font-mono text-blue-400 tracking-wider">★★★★★</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div> {/* Cierre Tarjeta 4 */}
+
+        </div> {/* Cierre Contenedor Columna Derecha */}
 
       </section>
     </main>
