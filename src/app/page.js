@@ -6,34 +6,35 @@ export default function Home() {
       <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Contenedor Principal: Ocupa todo el ancho de la pantalla y se divide en 2 Columnas */}
-      <section className="max-w-[100vw] w-full z-10 grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-x-12 items-stretch text-left md:mt-12">
+      {/* Contenedor Principal: Expandido a lo ancho */}
+      <div className="max-w-[100vw] w-full z-10 flex flex-col space-y-8 md:mt-12">
         
-        {/* COLUMNA IZQUIERDA: Agrupa Tarjeta de Identidad y Tarjeta de Estudios */}
-        <div className="flex flex-col space-y-6 md:sticky md:top-24 w-full">
+        {/* FILA 1: Identidad (Izquierda) + Acerca de mí (Derecha) */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-x-12 items-stretch text-left">
           
-          {/* TARJETA 1: Identidad y Tecnologías (Independiente) */}
-          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl flex flex-col space-y-6">
-            
-            {/* Badge de disponibilidad */}
-            <span className="self-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              Disponible para nuevos proyectos
-            </span>
+          {/* TARJETA 1: Identidad y Tecnologías */}
+          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl flex flex-col justify-between space-y-6">
+            <div className="space-y-6">
+              {/* Badge de disponibilidad */}
+              <span className="self-start inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                Disponible para nuevos proyectos
+              </span>
 
-            {/* Título e Identidad */}
-            <div className="space-y-3">
-              <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500">
-                Miguel Jorquera Marín
-              </h1>
-              
-              <div className="space-y-1">
-                <h2 className="text-xl font-semibold text-slate-200">
-                  Analista Programador
-                </h2>
-                <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">
-                  Estudiante de Ingeniería en Informática
-                </p>
+              {/* Título e Identidad */}
+              <div className="space-y-3">
+                <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-500">
+                  Miguel Jorquera Marín
+                </h1>
+                
+                <div className="space-y-1">
+                  <h2 className="text-xl font-semibold text-slate-200">
+                    Analista Programador
+                  </h2>
+                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest">
+                    Estudiante de Ingeniería en Informática
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -49,66 +50,59 @@ export default function Home() {
                 <span className="px-3 py-1.5 bg-slate-950/80 border border-slate-800 rounded-lg text-xs font-mono text-slate-300 shadow-sm">MySQL / Kimball</span>
               </div>
             </div>
+          </div>
 
-          </div> {/* Cierre Tarjeta 1 */}
-
-          {/* TARJETA 2: Formación Académica (Independiente) */}
-          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl">
-            <h3 className="text-xl font-bold text-slate-100 tracking-tight mb-4">
-              Formación académica
-            </h3>
-            <div className="space-y-4 relative border-l border-slate-800 pl-4 ml-1">
-              <div>
-                <h4 className="text-sm font-semibold text-slate-200">Ingeniería en Informática</h4>
-                <p className="text-xs text-cyan-400 font-medium">INACAP • 2026 — En curso</p>
-              </div>
-              <div>
-                <h4 className="text-sm font-semibold text-slate-200">Analista Programador</h4>
-                <p className="text-xs text-slate-400 font-medium">INACAP • 2024 — 2025 • Cursando práctica</p>
-              </div>
+          {/* TARJETA 3: Acerca de Mí */}
+          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl text-slate-300 leading-relaxed flex flex-col justify-between">
+            <div>
+              <h3 className="text-2xl font-bold text-slate-100 tracking-tight border-b border-slate-800 pb-3">
+                Acerca de mí
+              </h3>
+              <p className="mt-4 text-base sm:text-lg text-slate-300">
+                Soy un programador en constante proceso de capacitación y certificación, apasionado por resolver problemas complejos mediante tecnología eficiente. Actualmente me mantengo enfocado en el estudio profundo de la automatización de datos y el desarrollo backend moderno.
+              </p>
             </div>
-          </div> {/* Cierre Tarjeta 2 */}
-
-        </div> {/* Cierre Contenedor Columna Izquierda */}
-
-
-        {/* COLUMNA DERECHA: Agrupa Tarjeta Acerca de Mí y Tarjeta de Habilidades */}
-        <div className="flex flex-col space-y-6 w-full">
-          
-          {/* TARJETA 3: Acerca de Mí (Independiente) */}
-          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl text-slate-300 leading-relaxed">
-            <h3 className="text-2xl font-bold text-slate-100 tracking-tight border-b border-slate-800 pb-3">
-              Acerca de mí
-            </h3>
-
-            <p className="mt-4 text-base sm:text-lg text-slate-300">
-              Soy un programador en constante proceso de capacitación y certificación, apasionado por resolver problemas complejos mediante tecnología eficiente. Actualmente me mantengo enfocado en el estudio profundo de la automatización de datos y el desarrollo backend moderno.
-            </p>
 
             {/* Botón de acción rápido */}
             <div className="pt-6">
-              <a 
-                href="#contacto" 
-                className="inline-block px-6 py-3 rounded-xl font-medium bg-gradient-to-r from-teal-500 to-cyan-500 text-slate-950 hover:opacity-90 transition shadow-lg shadow-teal-500/10 text-sm tracking-wide"
-              >
-                Contactar
-              </a>
             </div>
-          </div> {/* Cierre Tarjeta 3 */}
+          </div>
 
-          {/* TARJETA 4: Mis Habilidades (Independiente y Alineada) */}
-          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl text-slate-300 h-full flex flex-col justify-between">
+        </section>
+
+        {/* FILA 2: Formación Académica (Izquierda) + Habilidades (Derecha) */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-x-12 items-stretch text-left">
+          
+          {/* TARJETA 2: Formación Académica */}
+          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl flex flex-col justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-slate-100 tracking-tight border-b border-slate-800 pb-3 mb-6">
+                Formación académica
+              </h3>
+              <div className="space-y-4 relative border-l border-slate-800 pl-4 ml-1">
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-200">Ingeniería en Informática</h4>
+                  <p className="text-xs text-cyan-400 font-medium">INACAP • 2026 — En curso</p>
+                </div>
+                <div>
+                  <h4 className="text-sm font-semibold text-slate-200">Analista Programador</h4>
+                  <p className="text-xs text-slate-400 font-medium">INACAP • 2024 — 2025 • Cursando práctica profesional</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* TARJETA 4: Mis Habilidades */}
+          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl text-slate-300 flex flex-col justify-between">
             <div>
               <h3 className="text-2xl font-bold text-slate-100 tracking-tight border-b border-slate-800 pb-3 mb-6">
                 Mis habilidades
               </h3>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm">
-                
                 {/* Sub-columna Técnicas */}
                 <div className="space-y-3">
                   <h4 className="text-xs font-semibold text-teal-400 uppercase tracking-wider mb-2">Técnicas</h4>
-                  
                   <div className="space-y-2.5">
                     <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
                       <span className="text-slate-300">HTML, CSS, JS</span>
@@ -132,7 +126,6 @@ export default function Home() {
                 {/* Sub-columna Gestión */}
                 <div className="space-y-3">
                   <h4 className="text-xs font-semibold text-blue-400 uppercase tracking-wider mb-2">Gestión</h4>
-                  
                   <div className="space-y-2.5">
                     <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
                       <span className="text-slate-300">Autoaprendizaje</span>
@@ -152,14 +145,13 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
-          </div> {/* Cierre Tarjeta 4 */}
+          </div>
 
-        </div> {/* Cierre Contenedor Columna Derecha */}
+        </section>
 
-      </section>
+      </div>
     </main>
   );
 }
