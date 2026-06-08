@@ -6,7 +6,7 @@ export default function Home() {
       <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none" />
 
-      {/* Contenedor Principal: Expandido a lo ancho */}
+      {/* Contenedor Principal */}
       <div className="max-w-[100vw] w-full z-10 flex flex-col space-y-8 md:mt-12">
         
         {/* FILA 1: Identidad (Izquierda) + Acerca de mí (Derecha) */}
@@ -86,7 +86,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-slate-200">Analista Programador</h4>
-                  <p className="text-xs text-slate-400 font-medium">INACAP • 2024 — 2025 • Cursando práctica profesional</p>
+                  <p className="text-xs text-slate-400 font-medium">INACAP • 2024 — 2025 • Cursando práctica</p>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function Home() {
                     </div>
                     <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
                       <span className="text-slate-300">Docker & WSL2</span>
-                      <span className="font-mono text-teal-400 tracking-wider">★★★☆☆</span>
+                      <span className="font-mono text-teal-400 tracking-wider">★★★★☆</span>
                     </div>
                     <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
                       <span className="text-slate-300">Git & GitHub</span>
@@ -150,6 +150,50 @@ export default function Home() {
           </div>
 
         </section>
+
+        {/* FILA 3: Certificaciones y Aprendizaje Continúo (ANCHO COMPLETO DE EXTREMO A EXTREMO) */}
+        <section className="w-full text-left">
+          <div className="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 p-6 md:p-8 rounded-2xl shadow-xl text-slate-300">
+            <h3 className="text-2xl font-bold text-slate-100 tracking-tight border-b border-slate-800 pb-3 mb-6">
+              Certificaciones y aprendizaje continuo
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+              {/* Item 1: Git */}
+              <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-800/40">
+                <span className="text-xs font-mono text-teal-400 uppercase tracking-wider block mb-1">Certificación</span>
+                <h4 className="text-base font-semibold text-slate-100 mb-1">Control de Versiones</h4>
+                <p className="text-xs text-slate-400 mb-2">Edutin Academy • Git & GitHub</p>
+                <p className="text-xs text-slate-500 leading-relaxed">Gestión de repositorios, flujos de trabajo e historial de cambios.</p>
+              </div>
+
+              {/* Item 2: Docker */}
+              <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-800/40">
+                <span className="text-xs font-mono text-teal-400 uppercase tracking-wider block mb-1">Certificación</span>
+                <h4 className="text-base font-semibold text-slate-100 mb-1">Contenerización básica</h4>
+                <p className="text-xs text-slate-400 mb-2">Edutin Academy • Docker</p>
+                <p className="text-xs text-slate-500 leading-relaxed">Creación de entornos aislados y despliegue básico de aplicaciones.</p>
+              </div>
+
+              {/* Item 3: Next.js */}
+              <div className="bg-slate-950/40 p-4 rounded-xl border border-slate-800/40">
+                <span className="text-xs font-mono text-blue-400 uppercase tracking-wider block mb-1">En proceso e investigación</span>
+                <h4 className="text-base font-semibold text-slate-100 mb-1">Desarrollo Frontend Moderno</h4>
+                <p className="text-xs text-slate-400 mb-2">Next.js & Tailwind CSS</p>
+                <p className="text-xs text-slate-500 leading-relaxed">Practicando la estructuración de componentes interactivos y lógica basada en App Router.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* PIE DE PÁGINA (FOOTER): Enlaces de Contacto Sobrios */}
+        <footer className="w-full pt-8 pb-4 border-t border-slate-900 text-center flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <p>© {new Date().getFullYear()} — Miguel Jorquera Marín</p>
+          <div className="flex gap-6">
+            <a href="mailto:tu-correo@ejemplo.com" className="hover:text-teal-400 transition">Correo Profesional</a>
+            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition">GitHub</a>
+          </div>
+        </footer>
 
       </div>
     </main>
