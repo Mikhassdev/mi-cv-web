@@ -186,15 +186,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* PIE DE PÁGINA (FOOTER): Enlaces de Contacto Sobrios */}
-        <footer className="w-full pt-8 pb-4 border-t border-slate-900 text-center flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} — Miguel Jorquera Marín</p>
-          <div className="flex gap-6">
-            <a href="mailto:tu-correo@ejemplo.com" className="hover:text-teal-400 transition">Correo Profesional</a>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-cyan-400 transition">GitHub</a>
-          </div>
-        </footer>
-
       </div>
     </main>
   );
