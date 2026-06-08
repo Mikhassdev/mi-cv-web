@@ -114,7 +114,7 @@ export default function Home() {
                     </div>
                     <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
                       <span className="text-slate-300">Docker & WSL2</span>
-                      <span className="font-mono text-teal-400 tracking-wider">★★★★☆</span>
+                      <span className="font-mono text-teal-400 tracking-wider">★★★☆☆</span>
                     </div>
                     <div className="flex justify-between items-center border-b border-slate-900 pb-1.5">
                       <span className="text-slate-300">Git & GitHub</span>
